@@ -5,5 +5,5 @@ using UnityEngine.Pool;
 
 public class Spacecraft : MonoBehaviour
 {
-    private IObjectPool<SpacecraftComponent> spacecraftComponents;
+
 }

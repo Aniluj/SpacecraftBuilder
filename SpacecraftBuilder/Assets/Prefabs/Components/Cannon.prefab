@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894869eafa270fd419bd7bcd8397634a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentSizeInBounds:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 1, y: 1, z: 1}
+  _tileAssigned: {fileID: 11400000, guid: ac0955dd9f225354fb2d922e07850661, type: 2}
 --- !u!61 &8835822754844055406
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -240,6 +240,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08315172ca8f6954ba5c66035ff3369c, type: 3}
+--- !u!1 &200256838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200256840}
+  - component: {fileID: 200256839}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &200256839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200256838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4afb13f08c8e97458b8872bf304faaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spacecraft: {fileID: 1527171304}
+  _buildSimulationManager: {fileID: 1225430978}
+--- !u!4 &200256840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200256838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5447783, y: -2.190704, z: 90.00001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &367263314
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +297,7 @@ GameObject:
   - component: {fileID: 367263315}
   - component: {fileID: 367263316}
   m_Layer: 0
-  m_Name: PoolParent
+  m_Name: SpacecraftComponentsFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolMaxSize: 30
-  _poolParent: {fileID: 367263314}
+  _poolParent: {fileID: 1527171303}
   _enginePrefab: {fileID: 4333131175832262562, guid: 297286894b68e57488cf79d5fb45bf15, type: 3}
   _shieldPrefab: {fileID: 6096523060868115966, guid: 53bc664a5c8c6c348aa88b41f3ec68c3, type: 3}
   _livingAreaPrefab: {fileID: -3366791570099366737, guid: 39ed65b5abef1af4f92aa8b3f6241773, type: 3}
@@ -1485,7 +1531,6 @@ GameObject:
   - component: {fileID: 921023479}
   - component: {fileID: 921023478}
   - component: {fileID: 921023477}
-  - component: {fileID: 921023481}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1577,18 +1622,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &921023481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921023475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e28947fb228d641ac6a35b09c68933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &958646235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1838,6 +1871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225430977}
   - component: {fileID: 1225430976}
+  - component: {fileID: 1225430978}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -1873,6 +1907,22 @@ Transform:
   - {fileID: 566507190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225430978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225430975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caba20e30dd65447a7e028be9730245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingSpace: {fileID: 1225430976}
+  _tilemapUsed: {fileID: 566507192}
+  _blockedSpaceTile: {fileID: 11400000, guid: ac0955dd9f225354fb2d922e07850661, type: 2}
+  _freeSpaceTile: {fileID: 11400000, guid: 21030ded248d5cd48aa6a32dc9a99d22, type: 2}
 --- !u!224 &1229899826 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6706628582203861482, guid: 08315172ca8f6954ba5c66035ff3369c, type: 3}
@@ -1966,13 +2016,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506297026}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 200256839}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2079,6 +2129,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1527171303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527171305}
+  - component: {fileID: 1527171304}
+  m_Layer: 0
+  m_Name: Spacecraft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1527171304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527171303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981f801ab3f78c04fad740b4015fe70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1527171305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527171303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2252,7 +2346,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1225430977}
+  - {fileID: 200256840}
   - {fileID: 367263315}
+  - {fileID: 1527171305}
+  - {fileID: 1225430977}
   - {fileID: 921023480}
   - {fileID: 1519538879}
